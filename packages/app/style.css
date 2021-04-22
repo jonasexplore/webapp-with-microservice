@@ -1,0 +1,18 @@
+body {
+  background-color: #f3f3f3;
+}
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.mainContent {
+  background-color: #ffffff;
+
+  border-radius: 0.5rem;
+  padding: 2rem;
+}

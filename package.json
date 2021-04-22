@@ -1,0 +1,13 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "lerna run dev --stream",
+    "start": "lerna run start:prod --stream"
+  },
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}

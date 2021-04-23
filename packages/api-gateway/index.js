@@ -1,6 +1,9 @@
 const express = require("express");
 const axios = require("axios").default;
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 const apiSomarPath = "http://localhost:3334/";
 const apiMultiplicarPath = "http://localhost:3335/";
@@ -30,19 +33,21 @@ const getMultiple = async ({ firstNumber, secondNumber }) => {
   }
 };
 
-app.get("/somar", async (req, res) => {
-  console.log(req.query);
-  const numbers = req.query;
+app.get("/status", (req, res) => {
+  res.json("checked");
+});
 
+app.get("/somar", async (req, res) => {
+  const numbers = req.query;
   const response = await getSum({ ...numbers });
-  console.log(response);
-  res.json({ data: response });
+
+  res.json(response);
 });
 app.get("/multiplicar", async (req, res) => {
   const numbers = req.query;
   const response = await getMultiple({ ...numbers });
 
-  res.json({ data: response });
+  res.json(response);
 });
 
 app.listen(3333, () => console.log("🚀 Server has started"));
